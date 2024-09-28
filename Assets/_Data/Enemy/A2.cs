@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Animal
+public class A2 : EnemyAbstract
 {
-
+    
 }
