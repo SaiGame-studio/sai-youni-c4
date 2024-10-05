@@ -9,7 +9,7 @@ public class EnemySorting : MonoBehaviour
 
     protected void Start()
     {
-        Invoke(nameof(this.Sorting), 2f);
+        //Invoke(nameof(this.Sorting), 2f);
     }
 
     protected void Sorting()

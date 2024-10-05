@@ -10,11 +10,10 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("EnemyManager Start: ");
         this.LoadEnemies();
-        this.ShowEnemies();
-        this.FindMinEnemy();
-        this.FindMaxEnemy();
+        //this.ShowEnemies();
+        //this.FindMinEnemy();
+        //this.FindMaxEnemy();
     }
 
     protected void LoadEnemies()

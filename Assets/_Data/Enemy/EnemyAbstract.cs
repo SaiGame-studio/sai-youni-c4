@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyAbstract : MonoBehaviour
 {
-    string enemyName = "Zombie";
+    //string enemyName = "Zombie";
     int enemyHPCurrent = 100;
     public int Health => enemyHPCurrent;
-    int enemyHPMax = 100;
+    //int enemyHPMax = 100;
     bool isDead = true;
     int minHealth = 0;
     int maxHealth = 100;
