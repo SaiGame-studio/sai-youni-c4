@@ -5,16 +5,16 @@ using UnityEngine;
 public class EnemySorting : MonoBehaviour
 {
     public EnemyManager enemyManager;
-    List<EnemyAbstract> sortEnemies = new();
+    List<EnemyAbstractOld> sortEnemies = new();
 
     protected void Start()
     {
-        Invoke(nameof(this.Sorting), 2f);
+        //Invoke(nameof(this.Sorting), 2f);
     }
 
     protected void Sorting()
     {
-        this.sortEnemies = new List<EnemyAbstract>(this.enemyManager.GetEnemies());
+        this.sortEnemies = new List<EnemyAbstractOld>(this.enemyManager.GetEnemies());
 
         this.PrintEnemyList(this.sortEnemies);
         //this.SelectionSort(this.sortEnemies);
@@ -22,7 +22,7 @@ public class EnemySorting : MonoBehaviour
         this.PrintEnemyList(this.sortEnemies);
     }
 
-    void SelectionSort(List<EnemyAbstract> enemies)
+    void SelectionSort(List<EnemyAbstractOld> enemies)
     {
         for (int i = 0; i < enemies.Count - 1; i++)
         {
@@ -35,13 +35,13 @@ public class EnemySorting : MonoBehaviour
                 }
             }
 
-            EnemyAbstract temp = enemies[minIdx];
+            EnemyAbstractOld temp = enemies[minIdx];
             enemies[minIdx] = enemies[i];
             enemies[i] = temp;
         }
     }
 
-    void PrintEnemyList(List<EnemyAbstract> enemies)
+    void PrintEnemyList(List<EnemyAbstractOld> enemies)
     {
         Debug.Log("= Print ===================");
 
