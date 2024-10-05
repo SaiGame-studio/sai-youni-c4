@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tifa : EnemyAbstract
+public class Tifa : EnemyAbstractOld
 {
 
 }
