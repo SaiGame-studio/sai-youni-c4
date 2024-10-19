@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyCtrl : SaiBehaviour
+public abstract class EnemyCtrl : PoolObj
 {
     [SerializeField] protected NavMeshAgent agent;
     public NavMeshAgent Agent => agent;

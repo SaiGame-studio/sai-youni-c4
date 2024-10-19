@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd08c5ec833d5d489d6e5d0a17d530a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ctrl: {fileID: 3438867639814939064}
+  ctrl: {fileID: 0}
   path: {fileID: 0}
   currentPointIndex: 0
   currentPoint: {fileID: 0}
@@ -2092,7 +2092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 172811352867729617}
   - component: {fileID: 4560090262808383818}
-  - component: {fileID: 3438867639814939064}
+  - component: {fileID: 4995367243247061575}
   m_Layer: 0
   m_Name: Warrok
   m_TagString: Untagged
@@ -2140,7 +2140,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3438867639814939064
+--- !u!114 &4995367243247061575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2149,9 +2149,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6403115175020679975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b746367b91f2394596d25ea2d07b898, type: 3}
+  m_Script: {fileID: 11500000, guid: bdb45ba0f455574499c83c3be005dc97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawn: {fileID: 0}
   agent: {fileID: 4560090262808383818}
   animator: {fileID: 4696843714963129292}
 --- !u!1 &6588563920253679910
@@ -2200,6 +2201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 10
   maxHP: 10
+  isDead: 0
 --- !u!1 &6606246535772152579
 GameObject:
   m_ObjectHideFlags: 0
