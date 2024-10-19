@@ -53,7 +53,7 @@ public class TowerShooting : TowerAbstract
         return this.firePoints[this.firePointIndex];
     }
 
-    protected virtual void LoadFirePoints()
+     protected virtual void LoadFirePoints()
     {
         if (this.firePoints.Count > 0) return;
         FirePoint[] points = this.ctrl.GetComponentsInChildren<FirePoint>();
