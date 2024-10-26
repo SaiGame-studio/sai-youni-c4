@@ -18,6 +18,7 @@ public class TowerRadar : SaiBehaviour
 
     protected virtual void OnTriggerEnter(Collider collider)
     {
+        Debug.Log(collider.name, collider.gameObject);
         EnemyCtrl enemyCtrl = collider.GetComponentInParent<EnemyCtrl>();
         if (enemyCtrl == null) return;
 

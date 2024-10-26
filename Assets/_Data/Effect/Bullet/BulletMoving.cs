@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletMoving : SaiBehaviour
 {
-    public float speed = 10f;
+    public float speed = 20f;
 
     protected virtual void Update()
     {
@@ -13,6 +13,6 @@ public class BulletMoving : SaiBehaviour
 
    protected virtual void Moving()
     {
-        transform.parent.Translate(Vector3.forward * this.speed * Time.deltaTime);
+        transform.parent.Translate(this.speed * Time.deltaTime * Vector3.forward);
     }
 }

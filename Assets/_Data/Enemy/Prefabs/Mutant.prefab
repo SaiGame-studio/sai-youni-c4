@@ -489,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 2806224913745079900}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.16, y: -1.2490001, z: 44.51}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 2867188233477166188}
   spawner: {fileID: 0}
-  isDespawnByTime: 1
+  isDespawnByTime: 0
   timeLife: 7
   currentTime: 7
 --- !u!1 &3104642912563153822
@@ -944,6 +944,7 @@ MonoBehaviour:
   maxHP: 10
   isDead: 0
   isImmotal: 0
+  ctrl: {fileID: 0}
 --- !u!136 &2619605754535801628
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1184,9 +1185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020b897103b753b4ab7f8acab6a56131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawn: {fileID: 0}
+  despawn: {fileID: 5043793448760075014}
   agent: {fileID: 4617372968315289313}
   animator: {fileID: 3586659856219184492}
+  enemyDamageReceiver: {fileID: 8896931129838892524}
 --- !u!1 &6241814175558279500
 GameObject:
   m_ObjectHideFlags: 0

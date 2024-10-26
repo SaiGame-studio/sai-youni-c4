@@ -3,8 +3,27 @@ using UnityEngine;
 
 public abstract class Spawner<T> : SaiBehaviour where T : PoolObj
 {
+    [SerializeField] protected Transform holder;
     [SerializeField] protected int spawnCount = 0;
     [SerializeField] protected List<T> inPoolObjects = new();
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadHolder();
+    }
+
+    protected virtual void LoadHolder()
+    {
+        if (this.holder != null) return;
+        this.holder = transform.Find("Holder");
+        if (this.holder == null)
+        {
+            this.holder = new GameObject("Holder").transform;
+            this.holder.parent = transform;
+        }
+        Debug.Log(transform.name + ": LoadEffectPrefabs", gameObject);
+    }
 
     public virtual T Spawn(T prefab, Vector3 postion, Quaternion rotation)
     {
@@ -35,6 +54,7 @@ public abstract class Spawner<T> : SaiBehaviour where T : PoolObj
             newObject = Instantiate(prefab);
             this.spawnCount++;
             this.UpdateName(prefab.transform, newObject.transform);
+            newObject.transform.parent = this.holder;
         }
 
         return newObject;
