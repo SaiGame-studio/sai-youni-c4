@@ -30,6 +30,7 @@ public abstract class Despawn<T> : DespawnBase where T : PoolObj
     protected virtual void LoadSpawner()
     {
         if (this.spawner != null) return;
+        //this.spawner = GameObject.FindAnyObjectByType<Spawner<EnemyCtrl>>();
         this.spawner = GameObject.FindAnyObjectByType<Spawner<T>>();
         Debug.Log(transform.name + ": LoadSpawner", gameObject);
     }

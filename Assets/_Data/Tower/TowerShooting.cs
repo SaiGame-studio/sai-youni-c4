@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TowerShooting : TowerAbstract
 {
+    [Header("Shooting")]
     [SerializeField] protected EnemyCtrl target;
-    [SerializeField] protected EffectCtrl bulet;
+    [SerializeField] protected string bulletName = "Bullet";
     [SerializeField] protected float timer = 0;
-    [SerializeField] protected float delay = 1f;
+    [SerializeField] protected float delay = 0.5f;
     [SerializeField] protected int firePointIndex = 0;
     [SerializeField] protected List<FirePoint> firePoints = new();
 
@@ -43,7 +44,9 @@ public class TowerShooting : TowerAbstract
         this.timer = 0;
 
         FirePoint firePoint = this.GetFirePoint();
-        EffectCtrl newEfffect = EffectSpawnerCtrl.Instance.Spawner.Spawn(this.bulet, firePoint.transform.position, firePoint.transform.rotation);
+
+        EffectCtrl prefab = EffectSpawnerCtrl.Instance.Prefabs.GetByName(this.bulletName);
+        EffectCtrl newEfffect = EffectSpawnerCtrl.Instance.Spawner.Spawn(prefab, firePoint.transform.position, firePoint.transform.rotation);
         newEfffect.gameObject.SetActive(true);
     }
 
