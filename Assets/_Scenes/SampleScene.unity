@@ -699,8 +699,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 964249854}
+  m_Children: []
   m_Father: {fileID: 1009060445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &286104645
@@ -784,7 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCount: 0
-  inPoolObjs: []
+  inPoolObjects: []
 --- !u!1 &535536223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,14 +1463,14 @@ Transform:
   m_GameObject: {fileID: 964249853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43, y: -4.249, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1720616334}
   - {fileID: 92618647}
   - {fileID: 1038980150}
-  m_Father: {fileID: 286104644}
+  m_Father: {fileID: 1462796421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &964249856
 MeshRenderer:
@@ -2058,7 +2057,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.249, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 964249854}
   m_Father: {fileID: 1762015799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1462796422
@@ -2073,8 +2073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b38da3fa9bcd9b49844bd2f63e4147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 0
-  inPoolObjs: []
+  spawnCount: 2
+  inPoolObjects:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1462796423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,7 +2435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ca72533e47e904281547b60f398f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 5
 --- !u!1 &1734485982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2827,17 @@ Transform:
   - {fileID: 14233555}
   m_Father: {fileID: 1762015799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1973429572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5043793448760075014, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+  m_PrefabInstance: {fileID: 7878787948315467241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2866edcb7aaace4887d2e05d41e416e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2016298244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3540,6 +3553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrok
       objectReference: {fileID: 0}
+    - target: {fileID: 6751984276653741241, guid: 116fd57504177e04a9b8abf300ed2d9f, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 422575448}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3593,25 +3610,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 771847133657581631, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771847133657581631, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 771847133657581631, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867188233477166188, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: despawn
+      value: 
+      objectReference: {fileID: 1973429572}
     - target: {fileID: 3033687812872309968, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
       propertyPath: path
       value: 
       objectReference: {fileID: 264167218}
+    - target: {fileID: 5043793448760075014, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 422575448}
     - target: {fileID: 6205028574282680826, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
       propertyPath: m_Name
       value: Mutant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205028574282680826, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896931129838892524, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
-      propertyPath: isDead
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896931129838892524, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
-      propertyPath: isImmotal
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
