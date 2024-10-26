@@ -17,6 +17,8 @@ public abstract class Spawner<T> : SaiBehaviour where T : PoolObj
             this.UpdateName(prefab.transform, newObject.transform);
         }
 
+        GetComponent<EnemyCtrl>();
+
         return newObject;
     }
 

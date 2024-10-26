@@ -699,7 +699,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 964249854}
   m_Father: {fileID: 1009060445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &286104645
@@ -716,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ctrl: {fileID: 1009060446}
   target: {fileID: 0}
-  bulet: {fileID: 964249858}
+  bulletPrefab: {fileID: 964249858}
   timer: 0
   delay: 1
   firePointIndex: 0
@@ -1462,15 +1463,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964249853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 43, y: -4.249, z: 40}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1720616334}
   - {fileID: 92618647}
   - {fileID: 1038980150}
-  m_Father: {fileID: 1462796421}
+  m_Father: {fileID: 286104644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &964249856
 MeshRenderer:
@@ -1534,7 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ffb75d4830b8341bb2e93f6705b207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawn: {fileID: 0}
+  despawn: {fileID: 1038980151}
 --- !u!1 &1009060444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,8 +2058,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.249, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 964249854}
+  m_Children: []
   m_Father: {fileID: 1762015799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1462796422
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef530e07658cad45a1bafdb8f7aa8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
+  spawner: {fileID: 1462796422}
 --- !u!1001 &1567518796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2433,7 +2433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ca72533e47e904281547b60f398f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 40
 --- !u!1 &1734485982
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,13 +3601,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mutant
       objectReference: {fileID: 0}
+    - target: {fileID: 6205028574282680826, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8896931129838892524, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
       propertyPath: isDead
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8896931129838892524, guid: b166b6f897640e24ba258112a7b64e33, type: 3}
       propertyPath: isImmotal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
