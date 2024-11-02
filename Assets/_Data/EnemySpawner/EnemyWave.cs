@@ -12,6 +12,7 @@ public class EnemyWave : SaiBehaviour
     {
         base.Start();
         Invoke(nameof(this.Spawning), this.spawnSpeed);
+        //InvokeRepeating(nameof(this.RemoveDeadOne), 2f, this.spawnSpeed);
     }
 
     protected virtual void FixedUpdate()

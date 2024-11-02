@@ -13,6 +13,7 @@ public class TowerRadar : SaiBehaviour
 
     protected virtual void FixedUpdate()
     {
+        this.RemoveDeadEnemy();
         this.FindNearest();
     }
 
@@ -91,5 +92,18 @@ public class TowerRadar : SaiBehaviour
     public virtual EnemyCtrl GetTarget()
     {
         return this.nearest;
+    }
+
+    protected virtual void RemoveDeadEnemy()
+    {
+        foreach (EnemyCtrl enemyCtrl in this.enemies)
+        {
+            if (enemyCtrl.EnemyDamageReceiver.IsDead())
+            {
+                if (enemyCtrl == this.nearest) this.nearest = null;
+                this.enemies.Remove(enemyCtrl);
+                return;
+            }
+        }
     }
 }
