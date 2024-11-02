@@ -7,6 +7,13 @@ public abstract class DamageReceiver : SaiBehaviour
     [SerializeField] protected bool isDead = false;
     [SerializeField] protected bool isImmotal = false;
 
+    protected abstract void OnDead();
+    protected abstract void OnHurt();
+
+    protected virtual void OnEnable()
+    {
+        this.Reborn();
+    }
 
     public virtual void Receive(int damage, DamageSender damageSender)
     {
@@ -22,7 +29,9 @@ public abstract class DamageReceiver : SaiBehaviour
         return this.isDead = this.currentHP <= 0;
     }
 
-    protected abstract void OnDead();
+    protected virtual void Reborn()
+    {
+        this.currentHP = this.maxHP;
+    }
 
-    protected abstract void OnHurt();
 }

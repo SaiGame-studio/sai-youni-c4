@@ -10,6 +10,7 @@ public class EnemyMoving : EnemyAbstract
     [SerializeField] protected Point currentPoint;
     [SerializeField] protected float pointDistance = Mathf.Infinity;
     [SerializeField] protected float pointDistanceLimit = 1f;
+    [SerializeField] protected bool canMove = true;
     [SerializeField] protected bool isFinish = false;
     [SerializeField] protected bool isMoving = false;
 
@@ -34,7 +35,7 @@ public class EnemyMoving : EnemyAbstract
     protected virtual void Moving()
     {
         this.LoadMovingStatus();
-        if (this.isFinish)
+        if (this.isFinish || !this.canMove || this.IsDead())
         {
             this.ctrl.Agent.isStopped = true;
             return;
@@ -42,6 +43,11 @@ public class EnemyMoving : EnemyAbstract
 
         this.GetNextPoint();
         this.ctrl.Agent.SetDestination(this.currentPoint.transform.position);
+    }
+
+    protected virtual bool IsDead()
+    {
+        return this.ctrl.EnemyDamageReceiver.IsDead();
     }
 
     protected virtual void GetNextPoint()
