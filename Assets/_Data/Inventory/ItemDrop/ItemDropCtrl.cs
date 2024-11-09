@@ -9,6 +9,8 @@ public abstract class ItemDropCtrl : PoolObj
     [SerializeField] protected int dropCount = 0;
     public int DropCount => dropCount;
 
+    public abstract ItemCode GetItemCode();
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -21,6 +23,13 @@ public abstract class ItemDropCtrl : PoolObj
         this._rigi = GetComponent<Rigidbody>();
         Debug.Log(transform.name + ": LoadRigibody", gameObject);
     }
+
+
+    public override string GetName()
+    {
+        return this.GetItemCode().ToString();
+    }
+
 
     public virtual void SetDropCount(int dropCount)
     {

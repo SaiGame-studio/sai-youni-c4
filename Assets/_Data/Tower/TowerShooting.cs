@@ -12,11 +12,18 @@ public class TowerShooting : TowerAbstract
     [SerializeField] protected int firePointIndex = 0;
     [SerializeField] protected List<FirePoint> firePoints = new();
 
+    [SerializeField] protected int killCount = 0;
+    public int KillCount => killCount;
+
+
+    [SerializeField] protected int totalKill = 0;
+
     protected virtual void FixedUpdate()
     {
         this.GetTarget();
         this.LookAtTarget();
         this.Shooting();
+        this.IsTargetDead();
     }
 
     protected override void LoadComponents()
@@ -64,5 +71,22 @@ public class TowerShooting : TowerAbstract
         FirePoint[] points = this.ctrl.GetComponentsInChildren<FirePoint>();
         this.firePoints = new List<FirePoint>(points);
         Debug.LogWarning(transform.name + ": LoadFirePoints", gameObject);
+    }
+
+    protected virtual bool IsTargetDead()
+    {
+        if (this.target == null) return true;
+        if (!this.target.EnemyDamageReceiver.IsDead()) return false;
+        this.killCount++;
+        this.totalKill++;
+        this.target = null;
+        return true;
+    }
+
+    public virtual bool DeductKillCount(int count)
+    {
+        if (this.killCount < count) return false;
+        this.killCount -= count;
+        return true;
     }
 }
