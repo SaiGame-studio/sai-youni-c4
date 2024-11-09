@@ -28,4 +28,5 @@ public class EffectSpawnerCtrl : SaiSingleton<EffectSpawnerCtrl>
         this.prefabs = GetComponentInChildren<EffectPrefabs>();
         Debug.Log(transform.name + ": LoadEffectPrefabs", gameObject);
     }
+
 }

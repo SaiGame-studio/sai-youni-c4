@@ -944,7 +944,8 @@ MonoBehaviour:
   maxHP: 10
   isDead: 0
   isImmotal: 0
-  ctrl: {fileID: 0}
+  ctrl: {fileID: 2867188233477166188}
+  capsuleCollider: {fileID: 2619605754535801628}
 --- !u!136 &2619605754535801628
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -960,12 +961,12 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5314511092658834331
@@ -1043,12 +1044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd08c5ec833d5d489d6e5d0a17d530a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ctrl: {fileID: 0}
+  ctrl: {fileID: 2867188233477166188}
   path: {fileID: 0}
   currentPointIndex: 0
   currentPoint: {fileID: 0}
   pointDistance: Infinity
   pointDistanceLimit: 1
+  canMove: 1
   isFinish: 0
   isMoving: 0
 --- !u!1 &6058225299866223988
