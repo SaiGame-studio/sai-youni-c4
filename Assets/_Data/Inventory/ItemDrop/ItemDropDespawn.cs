@@ -19,7 +19,7 @@ public class ItemDropDespawn : Despawn<ItemDropCtrl>
 
     public override void DoDespawn()
     {
-        InventoriesManager.Instance.AddItem(ItemCode.Gold, this.ctrl.DropCount);
+        InventoriesManager.Instance.AddItem(this.ctrl.GetItemCode(), this.ctrl.DropCount);
         base.DoDespawn();
     }
 }

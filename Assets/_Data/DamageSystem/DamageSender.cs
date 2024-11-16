@@ -9,10 +9,10 @@ public abstract class DamageSender : SaiBehaviour
 
     protected virtual void OnTriggerEnter(Collider collider)
     {
-        this.SendDamage(collider);
+        this.Send(collider);
     }
 
-    protected virtual DamageReceiver SendDamage(Collider collider)
+    protected virtual DamageReceiver Send(Collider collider)
     {
         //Debug.LogError(transform.parent.name + " / " + collider.transform.parent.name);
         DamageReceiver damageReceiver = collider.GetComponent<DamageReceiver>();
