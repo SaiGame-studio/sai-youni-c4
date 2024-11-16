@@ -29,9 +29,9 @@ public class BulletDamageSender : DamageSender
         Debug.Log(transform.name + ": LoadTriggerCollider", gameObject);
     }
 
-    protected override DamageReceiver SendDamage(Collider collider)
+    protected override DamageReceiver Send(Collider collider)
     {
-        DamageReceiver damageReceiver = base.SendDamage(collider);
+        DamageReceiver damageReceiver = base.Send(collider);
         if (damageReceiver == null) return null;
         this.despawn.DoDespawn();
         return damageReceiver;

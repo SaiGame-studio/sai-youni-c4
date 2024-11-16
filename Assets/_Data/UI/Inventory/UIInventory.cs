@@ -19,7 +19,7 @@ public class UIInventory : SaiSingleton<UIInventory>
 
     protected virtual void LateUpdate()
     {
-        //this.HotkeyToogleInventory();
+        this.HotkeyToogleInventory();
     }
 
     protected override void Start()
@@ -105,9 +105,9 @@ public class UIInventory : SaiSingleton<UIInventory>
         return null;
     }
 
-    //protected virtual void HotkeyToogleInventory()
-    //{
-    //    if (InputHotkeys.Instance.IsToogleInventoryUI) this.Toggle();
-    //}
+    protected virtual void HotkeyToogleInventory()
+    {
+        if (InputHotkeys.Instance.IsToogleInventoryUI) this.Toggle();
+    }
 }
 

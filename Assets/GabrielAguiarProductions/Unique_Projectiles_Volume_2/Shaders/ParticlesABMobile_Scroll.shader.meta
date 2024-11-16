@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a7d432525b1d71f408e587fece91edc5
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Mask: {fileID: 2800000, guid: 03e4ee8d0b5f45045bb12e2930ed4058, type: 3}
+  - _MainTex: {fileID: 2800000, guid: c936e49026718a642958d0ce5d715cd1, type: 3}
+  - _DistortionTexture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938,
+      type: 3}
+  - _DissolveTexture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
