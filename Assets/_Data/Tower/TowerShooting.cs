@@ -11,6 +11,7 @@ public class TowerShooting : TowerAbstract
     [SerializeField] protected float delay = 0.5f;
     [SerializeField] protected int firePointIndex = 0;
     [SerializeField] protected List<FirePoint> firePoints = new();
+    [SerializeField] protected SoundName shootSfxName = SoundName.LaserKickDrum;
 
     [SerializeField] protected int killCount = 0;
     public int KillCount => killCount;
@@ -54,6 +55,13 @@ public class TowerShooting : TowerAbstract
 
         this.SpawnBullet(firePoint);
         this.SpawnMuzzle(firePoint);
+        this.SpawnSound(firePoint.transform.position);
+    }
+
+    protected virtual void SpawnSound(Vector3 position)
+    {
+
+        SoundManager.Instance.CreateSfx(this.shootSfxName, position);
     }
 
     protected virtual EffectCtrl SpawnBullet(FirePoint firePoint)
