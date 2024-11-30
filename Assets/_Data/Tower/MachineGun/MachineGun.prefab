@@ -563,13 +563,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ctrl: {fileID: 4433481879214731447}
   target: {fileID: 0}
-  bulletName: Bullet
+  bulletCode: 2
   timer: 0
   delay: 1
   firePointIndex: 0
   firePoints:
   - {fileID: 7153897376516456474}
   - {fileID: 3529959328032072024}
+  shootSfxName: 101
   killCount: 0
   totalKill: 0
 --- !u!1 &4330690629234876379
@@ -833,7 +834,7 @@ GameObject:
   - component: {fileID: 1495202007166245833}
   - component: {fileID: 5468651427280312200}
   - component: {fileID: 3431563441547189485}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TowerRadar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
