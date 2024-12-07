@@ -10,7 +10,7 @@ public class AimingRightHand_target : SaiBehaviour
 
     protected virtual void ResetValue()
     {
-        transform.localPosition = new Vector3(0.2215742f, 0.177404f, 0.3095092f);
-        transform.localRotation = Quaternion.Euler(26.657f, -97.288f, -98.937f);
+        transform.localPosition = new Vector3(0.209000006f, 0.0759999976f, 0.298999995f);
+        transform.localRotation = Quaternion.Euler(new Vector3(9.53907776f, 271.061768f, 268.303101f));
     }
 }

@@ -16,8 +16,8 @@ public class PlayerCtrl : SaiSingleton<PlayerCtrl>
     [SerializeField] protected Rig aimingRig;
     public Rig AimingRig => aimingRig;
 
-    //[SerializeField] protected Weapons weapons;
-    //public Weapons Weapons => weapons;
+    [SerializeField] protected WeaponsManager weapons;
+    public WeaponsManager Weapons => weapons;
 
     protected override void LoadComponents()
     {
@@ -29,11 +29,10 @@ public class PlayerCtrl : SaiSingleton<PlayerCtrl>
         this.LoadWeapons();
     }
 
-
     protected virtual void LoadWeapons()
     {
-        //if (this.weapons != null) return;
-        //this.weapons = GetComponentInChildren<Weapons>();
+        if (this.weapons != null) return;
+        this.weapons = GetComponentInChildren<WeaponsManager>();
         Debug.Log(transform.name + ": LoadWeapons", gameObject);
     }
 
@@ -65,7 +64,7 @@ public class PlayerCtrl : SaiSingleton<PlayerCtrl>
         this.thirdPersonCamera = GameObject.FindAnyObjectByType<vThirdPersonCamera>();
         this.thirdPersonCamera.rightOffset = 0.6f;
         this.thirdPersonCamera.defaultDistance = 1.2f;
-        this.thirdPersonCamera.height = 1.3f;
+        this.thirdPersonCamera.height = 1.5f;
         this.thirdPersonCamera.yMinLimit = -40f;
         this.thirdPersonCamera.yMaxLimit = 40f;
         Debug.Log(transform.name + ": LoadThirdPersonCamera", gameObject);
