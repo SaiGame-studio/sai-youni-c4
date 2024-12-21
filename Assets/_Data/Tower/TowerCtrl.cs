@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerCtrl : SaiBehaviour
+public abstract class TowerCtrl : PoolObj
 {
     [SerializeField] protected TowerRadar radar;
     public TowerRadar Radar => radar;

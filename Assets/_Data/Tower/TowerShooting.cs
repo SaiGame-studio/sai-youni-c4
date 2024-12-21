@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerShooting : TowerAbstract
 {
     [Header("Shooting")]
+    [SerializeField] protected bool isDisable = true;
     [SerializeField] protected EnemyCtrl target;
     [SerializeField] protected EffectCode bulletCode = EffectCode.Projectile1;
     [SerializeField] protected float timer = 0;
@@ -40,12 +41,15 @@ public class TowerShooting : TowerAbstract
 
     protected virtual void LookAtTarget()
     {
+        if (this.isDisable) return;
         if (this.target == null) return;
         this.ctrl.Rotator.LookAt(this.target.transform.position);
     }
 
     protected virtual void Shooting()
     {
+        if (this.isDisable) return;
+
         this.timer += Time.deltaTime;
         if (this.target == null) return;
         if (this.timer < this.delay) return;
@@ -60,7 +64,6 @@ public class TowerShooting : TowerAbstract
 
     protected virtual void SpawnSound(Vector3 position)
     {
-
         SoundManager.Instance.CreateSfx(this.shootSfxName, position);
     }
 
@@ -113,5 +116,15 @@ public class TowerShooting : TowerAbstract
         if (this.killCount < count) return false;
         this.killCount -= count;
         return true;
+    }
+
+    public virtual void Active()
+    {
+        this.isDisable = false;
+    }
+
+    public virtual void Disable()
+    {
+        this.isDisable = true;
     }
 }

@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPro: {fileID: 3271204955245210658}
-  towerCtrl: {fileID: 4433481879214731447}
+  towerCtrl: {fileID: 0}
 --- !u!1 &1372779080657636849
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735bc539559462f45941d0b40092cf1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ctrl: {fileID: 4433481879214731447}
+  ctrl: {fileID: 0}
   target: {fileID: 0}
   bulletCode: 2
   timer: 0
@@ -703,7 +703,7 @@ MonoBehaviour:
   currentLevel: 1
   maxLevel: 100
   nextLevelExp: 0
-  towerCtrl: {fileID: 4433481879214731447}
+  towerCtrl: {fileID: 0}
 --- !u!1 &5624497013158311829
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4911851235966384127}
-  - component: {fileID: 4433481879214731447}
+  - component: {fileID: 6742742174003686305}
   m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
@@ -957,7 +957,7 @@ Transform:
   - {fileID: 845322268041163656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4433481879214731447
+--- !u!114 &6742742174003686305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -966,9 +966,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6626319769477503249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04eb9f910d3af824099f4f55327ca132, type: 3}
+  m_Script: {fileID: 11500000, guid: 11241e96d1a40e74c8664b1f9f355bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawn: {fileID: 0}
   radar: {fileID: 3431563441547189485}
   rotator: {fileID: 4636895722015314855}
   towerShooting: {fileID: 8237727334883128714}
