@@ -6,11 +6,38 @@ public class InventoriesManager : SaiSingleton<InventoriesManager>
     [SerializeField] protected List<InventoryCtrl> inventories;
     [SerializeField] protected List<ItemProfileSO> itemProfiles;
 
+    protected override void Start()
+    {
+        base.Start();
+        //Invoke(nameof(this.LoadGameData), 3f);
+        this.LoadGameData();
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadInventories();
         this.LoadItemProfiles();
+    }
+
+    public virtual void SaveGameData()
+    {
+        ItemInventory itemGold = this.Currency().FindItem(ItemCode.Gold);
+        if (itemGold != null) GameManager.Instance.Save.SaveInit("gold", itemGold.itemCount);
+
+        ItemInventory itemExp = this.Currency().FindItem(ItemCode.PlayerExp);
+        if (itemExp != null) GameManager.Instance.Save.SaveInit("exp", itemExp.itemCount);
+    }
+
+    public virtual void LoadGameData()
+    {
+        int goldCount = GameManager.Instance.Save.LoadInit("gold");
+        int expCount = GameManager.Instance.Save.LoadInit("exp");
+
+        this.AddItem(ItemCode.Gold, goldCount);
+        this.AddItem(ItemCode.PlayerExp, expCount);
+
+        InvokeRepeating(nameof(this.SaveGameData), 5f, 5f);
     }
 
     protected virtual void LoadInventories()

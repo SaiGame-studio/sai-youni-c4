@@ -21,4 +21,9 @@ public class SaiBehaviour : MonoBehaviour
     {
         //For overide
     }
+
+    public virtual void SetActive(bool status)
+    {
+        gameObject.SetActive(status);
+    }
 }
